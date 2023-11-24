@@ -51,7 +51,7 @@ class Config:
     TIME_ZONE = config("TIME_ZONE",default='Asia/Kolkata')
     BOT_USERNAME = ""
     BOT_ID = ""
-    BOT_NAME = "˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼"
+    BOT_NAME = ""
     owner_username = ""
 
 
@@ -61,7 +61,7 @@ class Development:
     # Fill in these vars if you want to use Traditional method of deploying
     LOGGER = True
     BOT_TOKEN = "YOUR BOT_TOKEN"
-    API_ID =  # Your APP_ID from Telegram
+    API_ID = 25818842  # Your APP_ID from Telegram
     API_HASH = "YOUR API HASH"  # Your APP_HASH from Telegram
     OWNER_ID = 5536304787  # Your telegram user id defult to mine
     MESSAGE_DUMP = -1001963178274  # Your Private Group ID for logs

@@ -10,8 +10,8 @@
       "Gojo",
       "Anime"
     ],
-    "repository": "https://github.com/Gojo-Bots/Gojo_Satoru",
-    "success_url": "https://t.me/GojoSuperbot",
+    "repository": "https://github.com/aashuxxD/Gojo_Satoru",
+    "success_url": "https://t.me/kunoxrobot",
     "env": {
       "BOT_TOKEN": {
         "description": "Your telegram bot token, get from @Botfather in telegram.",
@@ -41,12 +41,12 @@
       "OWNER_ID": {
         "description": "Your user ID as an integer.",
         "required": false,
-        "value": "1344569458"
+        "value": "5536304787"
       },
       "SUPPORT_GROUP": {
         "description": "Your Telegram support group chat username where users can contact in case of a problem..",
         "required": false,
-        "value": "gojo_bots_network"
+        "value": "College_wali_masti"
       },
       "MESSAGE_DUMP": {
         "description": "Event logs channel where bot will send updates.",
@@ -66,7 +66,7 @@
       "SUPPORT_CHANNEL": {
         "description": "Channel where bot updates will be posted!",
         "required": false,
-        "value": "gojo_bots_network"
+        "value": "saykkunomusic"
       },
       "SUDO_USERS": {
         "description": "A space-separated list of user IDs who you want to assign as sudo users.",

@@ -58,7 +58,7 @@ async def gen_start_kb(q: Message or CallbackQuery):
                 (
                     "• Bᴏᴛ Iɴғᴏ •",
                     "bot_curr_info"
-                )
+                ),
             ],
             [
                 (

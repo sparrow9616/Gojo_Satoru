@@ -30,10 +30,7 @@ Hey Thanks for your thought of donating me!
 When you donate, all the fund goes towards my development which makes on fast and responsive.
 Your donation might also me get me a new feature or two, which I wasn't able to get due to server limitations.
 
-All the fund would be put into my services such as database, storage and hosting!
-
-
-     """
+All the fund would be put into my services such as database, storage and hosting!"""
 
     LOGGER.info(f"{m.from_user.id} fetched donation text in {m.chat.id}")
     await m.reply_photo(photo=str(choice(StartPic)), caption=cpt)

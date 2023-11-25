@@ -104,8 +104,8 @@ async def start(c: Gojo, m: Message):
                 
         try:
             cpt = f"""
-✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})**
-๏ I'm ˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼ !
+✨ Hey [{mes.from_user.first_name}](http://t.me/{mes.from_user.username}) 🥀
+๏ I'm [˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot) !
 ➻ Tʜᴇ Mᴏsᴛ Pᴏᴡᴇʀғᴜʟ Tᴇʟᴇɢʀᴀᴍ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ Fᴏʀ Mᴀɴᴀɢɪɴɢ Yᴏᴜʀ Gʀᴏᴜᴘs Wɪᴛʜ Sᴏᴍᴇ Aᴡᴇsᴏᴍᴇ Aɴᴅ Usᴇғᴜʟ Fᴇᴀᴛᴜʀᴇs.
 Hit /help to find out more about how to use me in my full potential!."""
 

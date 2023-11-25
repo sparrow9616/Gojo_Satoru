@@ -105,7 +105,7 @@ async def start(c: Gojo, m: Message):
         try:
             cpt = f"""
 ✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
-๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !
+๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !.
 I'm here to help you manage your group(s)!
 Hit /help to find out more about how to use me in my full potential!."""
 
@@ -142,7 +142,8 @@ Hit /help to find out more about how to use me in my full potential!."""
 async def start_back(_, q: CallbackQuery):
     try:
         cpt = f"""
-Hey [{q.from_user.first_name}](http://t.me/{q.from_user.username})! I am Gojo ✨.
+✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
+๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !.
 I'm here to help you manage your group(s)!
 Hit /help to find out more about how to use me in my full potential!."""
 
@@ -235,7 +236,8 @@ async def help_menu(_, m: Message):
             ou = await gen_cmds_kb(m)
             keyboard = ikb(ou, True)
             msg = f"""
-Hey **[{m.from_user.first_name}](http://t.me/{m.from_user.username})**!I am Gojo✨.
+✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
+๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !.
 I'm here to help you manage your group(s)!
 Commands available:
 × /start: Start the bot

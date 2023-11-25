@@ -105,8 +105,8 @@ async def start(c: Gojo, m: Message):
         try:
             cpt = f"""
 ✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
-๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !.
-I'm here to help you manage your group(s)!
+๏ I'm ˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼ !
+➻ Tʜᴇ Mᴏsᴛ Pᴏᴡᴇʀғᴜʟ Tᴇʟᴇɢʀᴀᴍ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ Fᴏʀ Mᴀɴᴀɢɪɴɢ Yᴏᴜʀ Gʀᴏᴜᴘs Wɪᴛʜ Sᴏᴍᴇ Aᴡᴇsᴏᴍᴇ Aɴᴅ Usᴇғᴜʟ Fᴇᴀᴛᴜʀᴇs.
 Hit /help to find out more about how to use me in my full potential!."""
 
             await m.reply_photo(
@@ -143,8 +143,8 @@ async def start_back(_, q: CallbackQuery):
     try:
         cpt = f"""
 ✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
-๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !.
-I'm here to help you manage your group(s)!
+๏ I'm [˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼ !
+➻ Tʜᴇ Mᴏsᴛ Pᴏᴡᴇʀғᴜʟ Tᴇʟᴇɢʀᴀᴍ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ Fᴏʀ Mᴀɴᴀɢɪɴɢ Yᴏᴜʀ Gʀᴏᴜᴘs Wɪᴛʜ Sᴏᴍᴇ Aᴡᴇsᴏᴍᴇ Aɴᴅ Usᴇғᴜʟ Fᴇᴀᴛᴜʀᴇs.
 Hit /help to find out more about how to use me in my full potential!."""
 
         await q.edit_message_caption(
@@ -164,7 +164,7 @@ async def commands_menu(_, q: CallbackQuery):
     try:
         cpt = f"""
 ✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
-๏ I'm **[˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot)** !
+๏ I'm ˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼ !
 Commands available:
 × /start: Start the bot
 × /help: Give's you this message.

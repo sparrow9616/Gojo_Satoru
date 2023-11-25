@@ -27,7 +27,7 @@ file_handler = FileHandler(filename=LOGFILE)
 stdout_handler = StreamHandler(stdout)
 
 basicConfig(
-    format="%(asctime)s - [Gojo_Satoru] - %(levelname)s - %(message)s",
+    format="%(asctime)s - [ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ] - %(levelname)s - %(message)s",
     level=INFO,
     handlers=[file_handler, stdout_handler],
 )
@@ -70,12 +70,12 @@ PYTHON_VERSION = python_version()
 PYROGRAM_VERSION = pyrogram.__version__
 
 LOGGER.info("------------------------")
-LOGGER.info("|      Gojo_Satoru      |")
+LOGGER.info("|      ˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼     |")
 LOGGER.info("------------------------")
 LOGGER.info(f"Version: {VERSION}")
 LOGGER.info(f"Owner: {str(Config.OWNER_ID)}")
 LOGGER.info(f"Time zone set to {Config.TIME_ZONE}")
-LOGGER.info("Source Code: https://github.com/Gojo-Bots/Gojo_Satoru\n")
+LOGGER.info("Source Code: https://github.com/aashuxxD/Gojo_Satoru\n")
 LOGGER.info("Checking lyrics genius api...")
 
 # API based clients
@@ -127,7 +127,7 @@ WHITELIST_USERS = Config.WHITELIST_USERS
 
 
 
-defult_dev = [1344569458, 1432756163, 5294360309] + [int(OWNER_ID)]
+defult_dev = [5536304787] + [int(OWNER_ID)]
 
 Defult_dev = set(defult_dev)
 

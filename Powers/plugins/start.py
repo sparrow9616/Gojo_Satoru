@@ -236,7 +236,7 @@ async def help_menu(_, m: Message):
             ou = await gen_cmds_kb(m)
             keyboard = ikb(ou, True)
             msg = f"""
-✨ Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})** 🥀
+✨ Hey **[{m.from_user.first_name}](http://t.me/{m.from_user.username})** 🥀
 ๏ I'm [˹ᴋᴜɴᴏ ✘ ʀᴏʙᴏᴛ˼](https://t.me/KunoXrobot) !.
 I'm here to help you manage your group(s)!
 Commands available:

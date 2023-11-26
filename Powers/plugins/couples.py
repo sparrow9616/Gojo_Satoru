@@ -3,8 +3,6 @@ from datetime import datetime
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
-
-from Powers import pbot
 from Powers.utils.mongo import get_couple, save_couple
 
 

@@ -49,8 +49,8 @@ async def couple(_, message):
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
                 c1_id = random.choice(list_of_users)
-            c1_mention = (await pbot.get_users(c1_id)).mention
-            c2_mention = (await pbot.get_users(c2_id)).mention
+            c1_mention = (await Gojo.get_users(c1_id)).mention
+            c2_mention = (await Gojo.get_users(c2_id)).mention
 
             couple_selection_message = f"""**ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :**
 
@@ -63,8 +63,8 @@ async def couple(_, message):
         elif is_selected:
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
-            c1_name = (await pbot.get_users(c1_id)).mention
-            c2_name = (await pbot.get_users(c2_id)).mention
+            c1_name = (await Gojo.get_users(c1_id)).mention
+            c2_name = (await Gojo.get_users(c2_id)).mention
             couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
 
 {c1_name} + {c2_name} = 💗

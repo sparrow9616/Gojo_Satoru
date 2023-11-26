@@ -4,7 +4,7 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.enums import ChatType
 
-from Powers import pbot
+from Powers import Gojo
 from Powers.utils.mongo import get_couple, save_couple
 
 
@@ -31,7 +31,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@pbot.on_message(filters.command(["couple", "couples"]))
+@Gojo.on_message(filters.command(["couple", "couples"]))
 async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘ.")

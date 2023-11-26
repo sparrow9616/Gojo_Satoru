@@ -212,7 +212,7 @@ async def resetgb(_, m: Message):
     db = Greetings(m.chat.id)
     if m and not m.from_user:
         return
-    text = "Sad to see you leaving {first}.\nTake Care!"
+    text = "Sad to see you leaving {mention}.\nTake Care!"
     db.set_goodbye_text(text,None)
     await m.reply_text("Ok Done!")
     return
@@ -223,7 +223,7 @@ async def resetwlcm(_, m: Message):
     db = Greetings(m.chat.id)
     if m and not m.from_user:
         return
-    text = "Hey {first}, welcome to {chatname}!"
+    text = "Hey {mention}, welcome to {chatname}!"
     db.set_welcome_text(text,None)
     await m.reply_text("Done!")
     return
@@ -389,7 +389,7 @@ async def member_has_left(c: Gojo, member: ChatMemberUpdated):
             )
             return
         if not teks:
-            teks = "Sad to see you leaving {mention}\nTake Care!"
+            teks = "Sad to see you leaving {mention} \nTake Care!"
         try:
             if not UwU:
                 ooo = await c.send_message(

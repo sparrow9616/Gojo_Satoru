@@ -1,10 +1,10 @@
 from telegraph import upload_file
 from pyrogram import filters
-from Powers import app
+from Powers import Gojo
 from pyrogram.types import InputMediaPhoto
 
 
-@app.on_message(filters.command(["tgm" , "link"]))
+@Gojo.on_message(filters.command(["tgm" , "link"]))
 def ul(_, message):
     reply = message.reply_to_message
     if reply.media:

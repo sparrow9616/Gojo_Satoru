@@ -1,94 +1,83 @@
 import os
-from datetime import datetime
-
-from PIL import Image
-from telegraph import Telegraph, exceptions, upload_file
-
-from Powers import telethn as tbot
-from Powers.events import register
-
-TMP_DOWNLOAD_DIRECTORY = "./"
-telegraph = Telegraph(domain="graph.org")
-r = telegraph.create_account(short_name=kash)
-auth_url = r["auth_url"]
+from telegraph import upload_file
+from pyrogram import  filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-@register(pattern="^/tg(m|t) ?(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    optional_title = event.pattern_match.group(2)
-    if event.reply_to_msg_id:
-        start = datetime.now()
-        r_message = await event.get_reply_message()
-        input_str = event.pattern_match.group(1)
-        if input_str == "m":
-            downloaded_file_name = await tbot.download_media(
-                r_message, TMP_DOWNLOAD_DIRECTORY
-            )
-            end = datetime.now()
-            ms = (end - start).seconds
-            h = await event.reply(
-                "Downloaded to {} in {} seconds.".format(downloaded_file_name, ms)
-            )
-            if downloaded_file_name.endswith((".webp")):
-                resize_image(downloaded_file_name)
-            try:
-                start = datetime.now()
-                media_urls = upload_file(downloaded_file_name)
-            except exceptions.TelegraphException as exc:
-                await h.edit("ERROR: " + str(exc))
-                os.remove(downloaded_file_name)
-            else:
-                end = datetime.now()
-                (end - start).seconds
-                os.remove(downloaded_file_name)
-                await h.edit(
-                    "Uploaded to https://graph.org{})".format(media_urls[0]),
-                    link_preview=True,
-                )
-        elif input_str == "t":
-            user_object = await tbot.get_entity(r_message.sender_id)
-            title_of_page = user_object.first_name
-            if optional_title:
-                title_of_page = optional_title
-            page_content = r_message.message
-            if r_message.media:
-                if page_content != "":
-                    title_of_page = page_content
-                downloaded_file_name = await tbot.download_media(
-                    r_message, TMP_DOWNLOAD_DIRECTORY
-                )
-                m_list = None
-                with open(downloaded_file_name, "rb") as fd:
-                    m_list = fd.readlines()
-                for m in m_list:
-                    page_content += m.decode("UTF-8") + "\n"
-                os.remove(downloaded_file_name)
-            page_content = page_content.replace("\n", "<br>")
-            response = telegraph.create_page(title_of_page, html_content=page_content)
-            end = datetime.now()
-            ms = (end - start).seconds
-            await event.reply(
-                "Pasted to https://graph.org/{} in {} seconds.".format(
-                    response["path"], ms
-                ),
-                link_preview=True,
-            )
-    else:
-        await event.reply("Reply to a message to get a permanent telegra.ph link.")
+DOWNLOAD_LOCATION = os.environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/")
 
+START_TEXT = """Hello {},
+I am an under 5MB media or file to telegra.ph link uploader Gojo.
 
-def resize_image(image):
-    im = Image.open(image)
-    im.save(image, "PNG")
+Made by @FayasNoushad"""
 
+HELP_TEXT = """**About Me**
 
-__help__ = """
-ɪ ᴄᴀɴ ᴜᴘʟᴏᴀᴅ ғɪʟᴇs ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ
- ❍ /tgm :ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴍᴇᴅɪᴀ
- ❍ /tgt :ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
- ❍ /tgt [ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ]: ɢᴇᴛ ᴛᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ ᴏғ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ ᴡɪᴛʜ ᴄᴜsᴛᴏᴍ ɴᴀᴍᴇ.
+- Just give me a media under 5MB
+- Then I will download it
+- I will then upload it to the telegra.ph link
 """
 
-__mod_name__ = "T-Gʀᴀᴘʜ"
+ABOUT_TEXT = """**About Me**
+
+- **Gojo :** `Telegraph Uploader`
+- **Developer :**
+  • [GitHub](https://github.com/FayasNoushad)
+  • [Telegram](https://telegram.me/FayasNoushad)
+- **Source :** [Click here](https://github.com/FayasNoushad/Telegraph-Uploader-Gojo)
+- **Language :** [Python3](https://python.org)
+- **Library :** [Pyrogram](https://pyrogram.org)"""
+
+
+
+@Gojo.on_message(filters.command(["tgm"]) & filters.media)
+async def getmedia(Gojo, update):
+    
+    medianame = DOWNLOAD_LOCATION + str(update.from_user.id)
+    
+    try:
+        message = await update.reply_text(
+            text="`Processing...`",
+            quote=True,
+            disable_web_page_preview=True
+        )
+        await Gojo.download_media(
+            message=update,
+            file_name=medianame
+        )
+        response = upload_file(medianame)
+        try:
+            os.remove(medianame)
+        except:
+            pass
+    except Exception as error:
+        text=f"Error :- <code>{error}</code>"
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton('More Help', callback_data='help')]]
+        )
+        await message.edit_text(
+            text=text,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup
+        )
+        return
+    
+    text=f"**Link :-** `https://telegra.ph{response[0]}`\n\n**Join :-** @FayasNoushad"
+    reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(text="Open Link", url=f"https://telegra.ph{response[0]}"),
+                InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
+            ],
+            [
+                InlineKeyboardButton(text="Join Updates Channel", url="https://telegram.me/FayasNoushad")
+            ]
+        ]
+    )
+    
+    await message.edit_text(
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=reply_markup
+    )
+

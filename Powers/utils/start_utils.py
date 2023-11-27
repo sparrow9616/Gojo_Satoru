@@ -62,6 +62,11 @@ async def gen_start_kb(q: Message or CallbackQuery):
             ],
             [
                 (
+                    "• Mᴜsɪᴄ Bᴏᴛ •",
+                    "https://t.me/Saykkunobot",
+                    "url",
+                ),
+                (
                     "• Oᴡɴᴇʀ🌙 •",
                     Config.OWNER_ID,
                     "user_id",

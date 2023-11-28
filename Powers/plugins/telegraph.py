@@ -50,3 +50,15 @@ async def getmedia(c: Gojo, message):
         disable_web_page_preview=True,
         reply_markup=reply_markup
     )
+
+
+__PLUGIN__ = "telegraph"
+
+_DISABLE_CMDS_ = ["tgm"]
+
+__HELP__ = """
+**Teegraph**
+• /tgm  [reply to a message]
+
+`reply to a message` can be any media
+"""

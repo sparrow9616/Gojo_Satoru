@@ -1,4 +1,5 @@
 import os
+from Powers.bot_class import Gojo
 from telegraph import upload_file
 from pyrogram import  filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -7,18 +8,18 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 DOWNLOAD_LOCATION = "./TELEGRAPHDOWNLOADS/"
 
 @Gojo.on_message(filters.command(["tgm"]))
-async def getmedia(Gojo, update):
+async def getmedia(c: Gojo, m: Message):
 
-    medianame = DOWNLOAD_LOCATION + str(update.from_user.id)
+    medianame = DOWNLOAD_LOCATION + str(m.from_user.id)
 
     try:
-        message = await update.reply_text(
+        message = await m.reply_text(
             text="`Processing...`",
             quote=True,
             disable_web_page_preview=True
         )
-        await Gojo.download_media(
-            message=update,
+        await c.download_media(
+            message=m,
             file_name=medianame
         )
         response = upload_file(medianame)

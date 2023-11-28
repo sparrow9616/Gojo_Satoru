@@ -2,6 +2,7 @@ import os
 from Powers.bot_class import Gojo
 from telegraph import upload_file
 from pyrogram import  filters
+from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 

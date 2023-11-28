@@ -21,6 +21,10 @@ LOGDIR = f"{__name__}/logs"
 if not path.isdir(LOGDIR):
     mkdir(LOGDIR)
 
+if not path.isdir(TELEGRAPHDOWNLOADS):
+    mkdir(TELEGRAPHDOWNLOADS)
+
+
 LOGFILE = f"{LOGDIR}/{__name__}_{LOG_DATETIME}_log.txt"
 
 file_handler = FileHandler(filename=LOGFILE)

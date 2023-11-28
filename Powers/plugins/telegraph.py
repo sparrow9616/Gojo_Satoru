@@ -8,20 +8,19 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 DOWNLOAD_LOCATION = "./TELEGRAPHDOWNLOADS/"
 
 @Gojo.on_message(filters.command(["tgm"]))
-async def getmedia(c: Gojo, m: Message):
+async def getmedia(c: Gojo, message):
 
-    medianame = DOWNLOAD_LOCATION + str(m.from_user.id)
-
+    medianame = DOWNLOAD_LOCATION + str(message.from_user.id)
+    if(message.reply_to_message):
+        reply = message.reply_to_message
     try:
-        message = await m.reply_text(
+        message = await message.reply_text(
             text="`Processing...`",
             quote=True,
             disable_web_page_preview=True
         )
-        await c.download_media(
-            message=m,
-            file_name=medianame
-        )
+        if reply.media:
+            await reply.download(file_name = medianame)
         response = upload_file(medianame)
         try:
             os.remove(medianame)

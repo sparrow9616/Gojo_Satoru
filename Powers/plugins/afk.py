@@ -158,7 +158,7 @@ __alt_name__ = ["brb"]
 
 __HELP__ = """
 **AFK**
-• /afk (/brb) [reason | reply to a message]
+• /afk (brb) [reason | reply to a message]
 
 `reply to a message` can be any media or text
 """

@@ -2,7 +2,6 @@ import os
 from Powers.bot_class import Gojo
 from pyrogram import filters
 from pyrogram.types import Message
-from pyrogram.types import SUDOERS, USERBOT_PREFIX
 from pyrogram.types import capture_err
 
 

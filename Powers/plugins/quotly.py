@@ -1,6 +1,6 @@
+import random
 from datetime import datetime
-from random import choice
-from pyrogram import filters
+from pyrogram import upload_file
 from pyrogram.types import Message
 from Powers.bot_class import Gojo
 from Powers.utils.msg_types import get_couple, save_couple

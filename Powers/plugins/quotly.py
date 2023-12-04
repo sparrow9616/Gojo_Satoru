@@ -2,7 +2,7 @@ from datetime import datetime
 from random import choice
 from pyrogram import filters
 from pyrogram.types import Message
-from Powers.core.decorators.errors import Gojo
+from Powers.bot_class import Gojo
 from Powers.utils.msg_types import get_couple, save_couple
 
 

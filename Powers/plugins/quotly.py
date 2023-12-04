@@ -44,7 +44,7 @@ def tomorrow():
     return str(dt_tom())
 
 
-@app.on_message(filters.command("detect_gay"))
+@Gojo.on_message(filters.command("detect_gay"))
 @capture_err
 async def couple(_, message):
     if message.chat.type == enums.ChatType.PRIVATE:

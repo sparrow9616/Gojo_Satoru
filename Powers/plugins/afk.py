@@ -28,8 +28,8 @@ res = [
 ]
 
 back = [
-    "{first} is finally back to life",
-    "{first} welcome back",
+    "{mention} is finally back to life",
+    "{mention} welcome back",
     "{first} the spy is back watch what you talk about"
 ]
 

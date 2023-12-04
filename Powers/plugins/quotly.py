@@ -2,8 +2,8 @@ import os
 from Powers.bot_class import Gojo
 from pyrogram import filters
 from pyrogram.types import Message
-from wbb import SUDOERS, USERBOT_PREFIX, app, app2, arq
-from wbb.core.decorators.errors import capture_err
+from pyrogram.types import SUDOERS, USERBOT_PREFIX
+from pyrogram.types import capture_err
 
 
 @Gojo.on_message(filters.command("q", prefixes=USERBOT_PREFIX) & SUDOERS)

@@ -1,10 +1,12 @@
 import random
 from datetime import datetime
-from pyrogram import upload_file
-from pyrogram.types import Message
-from Powers.bot_class import Gojo
-from Powers.utils.msg_types import get_couple, save_couple
 
+import pytz
+from pyrogram import enums, filters
+
+from Powers import Gojo
+from Powers.core.decorators.errors import capture_err
+from Powers.utils.dbfunctions import get_couple, save_couple
 
 __MODULE__ = "Shippering"
 __HELP__ = "/detect_gay - To Choose Couple Of The Day"
@@ -42,7 +44,8 @@ def tomorrow():
     return str(dt_tom())
 
 
-@Gojo.on_message(filters.command("detect_gay"))
+@app.on_message(filters.command("detect_gay"))
+@capture_err
 async def couple(_, message):
     if message.chat.type == enums.ChatType.PRIVATE:
         return await message.reply_text("This command only works in groups.")

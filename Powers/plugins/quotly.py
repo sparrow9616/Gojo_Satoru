@@ -2,7 +2,7 @@ from datetime import datetime
 from random import choice
 from pyrogram import filters
 from pyrogram.types import Message
-from Powers.core.decorators.errors import capture_err
+from Powers.core.decorators.errors import Gojo
 from Powers.utils.msg_types import get_couple, save_couple
 
 
@@ -43,7 +43,6 @@ def tomorrow():
 
 
 @Gojo.on_message(filters.command("detect_gay"))
-@capture_err
 async def couple(_, message):
     if message.chat.type == enums.ChatType.PRIVATE:
         return await message.reply_text("This command only works in groups.")

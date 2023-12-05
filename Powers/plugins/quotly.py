@@ -11,13 +11,6 @@ from pyrogram.types import Message
 from Powers.core.decorators.errors import Gojo
 from Powers.utils.dbfunctions import get_couple, save_couple
 
-__MODULE__ = "Quotly"
-__HELP__ = """
-/q - To quote a message.
-/q [INTEGER] - To quote more than 1 messages.
-/q r - to quote a message with it's reply
-
-"""
 
 async def quotify(messages: list):
     response = await arq.quotly(messages)

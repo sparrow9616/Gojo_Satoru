@@ -1,13 +1,14 @@
 import random
 from datetime import datetime
 
-from io import BytesIO
 from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
 from wbb import SUDOERS, Gojo
-from wbb.core.decorators.errors import capture_err
+from from pyrogram import  filters
+from pyrogram.types import Message
+from Powers.core.decorators.errors import Gojo
 from Powers.utils.dbfunctions import get_couple, save_couple
 
 __MODULE__ = "Quotly"
@@ -44,7 +45,6 @@ def isArgInt(message: Message) -> list:
 
 @Gojo.on_message(filters.command("q", prefixes=USERBOT_PREFIX) & SUDOERS)
 @Gojo.on_message(filters.command("q") & ~filters.private & ~filters.edited)
-@capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
         return await message.reply_text("Reply to a message to quote it.")

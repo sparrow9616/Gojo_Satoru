@@ -643,7 +643,7 @@ StartPic = [
     "https://telegra.ph/file/d527c66c01b695862bb03.jpg",
     "https://telegra.ph/file/725a0f2d8474b2cb799d2.jpg",
     "https://telegra.ph/file/63c8381f0fd826452ad41.jpg",
-    "https://telegra.ph/file/a938ba9bdb8ee595b6f1b.jpg',
+    "https://telegra.ph/file/a938ba9bdb8ee595b6f1b.jpg",
     "https://telegra.ph/file/9e9225e5522df0583a883.jpg",
     "https://telegra.ph/file/ea21a214425574e6d47aa.jpg",
     "https://graph.org/file/798a33ee39bca8014116c.jpg",

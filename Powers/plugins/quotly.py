@@ -1,7 +1,7 @@
 from io import BytesIO
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Powers import Gojo
+from Powers.bot_class import Gojo
 from httpx import AsyncClient, Timeout
 
 

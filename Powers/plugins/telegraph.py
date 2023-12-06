@@ -57,7 +57,7 @@ __PLUGIN__ = "telegraph"
 _DISABLE_CMDS_ = ["tgm"]
 
 __HELP__ = """
-**Teegraph**
+**Telegraph**
 • /tgm  [reply to a message]
 
 `reply to a message` can be any media
